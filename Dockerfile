@@ -1,14 +1,9 @@
-FROM debian:stretch
-
-RUN apt-get update && apt-get install -y \
-  python-pip
+FROM python:3.7-alpine
 
 RUN mkdir /app
-RUN pip install speedtest-cli
-RUN pip install prometheus-client
+RUN pip install speedtest-cli prometheus-client
 
 COPY run-speedtest.py /app/
 
 EXPOSE 9104
-ENTRYPOINT ["/usr/bin/python", "-u", "/app/run-speedtest.py"]
-
+ENTRYPOINT ["/usr/local/bin/python", "-u", "/app/run-speedtest.py"]
