@@ -3,7 +3,12 @@
   "dns_config": { "nameservers": ["1.1.1.1", "1.0.0.1"] },
   "kind": "pipeline",
   "name": "amd64",
-  "node_selector": { "drone": true },
+  "node_selector":
+    {
+      "drone": true,
+      "kubernetes.io/arch": "amd64",
+      "kubernetes.io/os": "linux",
+    },
   "platform": { "arch": "amd64", "os": "linux" },
   "steps":
     [
@@ -71,7 +76,12 @@
   "dns_config": { "nameservers": ["1.1.1.1", "1.0.0.1"] },
   "kind": "pipeline",
   "name": "arm64",
-  "node_selector": { "drone": true },
+  "node_selector":
+    {
+      "drone": true,
+      "kubernetes.io/arch": "arm64",
+      "kubernetes.io/os": "linux",
+    },
   "platform": { "arch": "arm64", "os": "linux" },
   "steps":
     [
