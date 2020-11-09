@@ -13,8 +13,8 @@ test_interval = 60  # initiate speed test every 60 seconds
 
 s = speedtest.Speedtest()
 
-g_download = Gauge("speedtest_download_speed", "Download speed")
-g_upload = Gauge("speedtest_upload_speed", "Upload speed")
+g_download = Gauge("speedtest_download_speed_bits_per_second", "Download speed")
+g_upload = Gauge("speedtest_upload_speed_bits_per_seconds", "Upload speed")
 
 
 def process_request(t):
